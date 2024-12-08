@@ -1,43 +1,27 @@
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-
-import Heading from '@theme/Heading';
-import styles from './index.module.css';
-
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
+import React from 'react';
+import PatronesComportamiento from '../components/HomepageFeatures/PatronesComportamiento'; 
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
-      <main>
-        <HomepageFeatures />
+      title="Patrones de Diseño"
+      description="Página principal sobre patrones de diseño de software para mejorar la arquitectura y flexibilidad">
+      
+      {/* Contenedor principal */}
+      <main style={{ padding: '40px', textAlign: 'center', background: 'linear-gradient(to right, #f5f7fa, #c3cfe2)' }}>
+        {/* Título principal */}
+        <h1 style={{ fontSize: '3em', marginBottom: '30px', color: '#4a6fa5' }}>Patrones de Diseño de Comportamiento</h1>
+        
+        {/* Descripción introductoria */}
+        <p style={{ fontSize: '1.5em', marginBottom: '50px', color: '#333' }}>
+          Descubre cómo los patrones de diseño de comportamiento optimizan la interacción entre objetos y facilitan el mantenimiento de tu software.
+        </p>
+        
+        {/* Componente de patrones de comportamiento */}
+        <PatronesComportamiento />
       </main>
+      
     </Layout>
   );
 }
